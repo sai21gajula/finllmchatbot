@@ -1,20 +1,25 @@
-# tools/AlphaVantage_finance_tool.py
 import requests
 import json
-from crewai.tools import BaseTool, tool
+from crewai.tools import BaseTool
 from typing import Optional, Union
 from datetime import datetime, timedelta
 import time
 import random
 import os
 from typing import Dict, Any, List, Type
-from pydantic import Field, BaseModel
+from pydantic import Field, BaseModel, ConfigDict, field_validator
 
 # Create a Pydantic schema for the tool inputs
 class AlphaVantageNewsToolSchema(BaseModel):
     stock_symbol: str = Field(description="The stock symbol to get news for")
     max_results: Optional[Union[int, str]] = Field(default=5, description="Maximum number of news items to return")
     api_key: Optional[str] = Field(default=None, description="Alpha Vantage API key")
+
+    # Add config to allow extra fields
+    model_config = ConfigDict(
+        extra='allow',
+        arbitrary_types_allowed=True
+    )
 
 class AlphaVantageNewsTool(BaseTool):
     """Tool for getting news and sentiment about a stock from Alpha Vantage API."""
@@ -23,13 +28,23 @@ class AlphaVantageNewsTool(BaseTool):
     description: str = "Fetches the latest financial news and sentiment from Alpha Vantage for a given stock symbol."
     args_schema: Type[BaseModel] = AlphaVantageNewsToolSchema
     
-    def __init__(self, api_key=None, **kwargs):
+    # Define the API key as a class attribute with a default
+    api_key: str = ""
+
+    def __init__(self, **kwargs):
         """Initialize with API key."""
-        # Store API key before super init using double underscore for name mangling
-        self.__api_key = api_key or os.getenv("ALPHA_VANTAGE_API_KEY", "")
-        # Call parent init with the rest of the kwargs
+        # Extract API key from kwargs or environment
+        api_key = kwargs.get('api_key') or os.getenv("ALPHA_VANTAGE_API_KEY", "")
+        
+        # Set the class attribute
+        self.__class__.api_key = api_key
+        
+        # Call parent initialization
         super().__init__(**kwargs)
-        print(f"AlphaVantageNewsTool initialized with API key: {'*****' if self.__api_key else 'None'}")
+        
+        # Print initialization status
+        print(f"AlphaVantageNewsTool initialized with API key: {'*****' if api_key else 'None'}")
+    
     def _make_request(self, url, params=None, max_retries=3):
         """Make a request with basic retry logic."""
         headers = {
@@ -50,11 +65,13 @@ class AlphaVantageNewsTool(BaseTool):
                 time.sleep(2 ** attempt)  # Simple exponential backoff
     
     def _run(
-        self, 
-        stock_symbol: str, 
-        max_results: Optional[Union[int, str]] = 5, 
-        api_key: Optional[str] = None
-    ) -> str:
+    self, 
+    stock_symbol: str, 
+    max_results: Optional[Union[int, str]] = 5, 
+    api_key: Optional[str] = None,
+    **kwargs  # ← Accept unexpected args like 'security_context'
+        ) -> str:
+
         """
         Get news and sentiment for a specific stock from Alpha Vantage.
         
@@ -67,8 +84,8 @@ class AlphaVantageNewsTool(BaseTool):
             str: A string containing the news items with sentiment analysis.
         """
         try:
-            # Use provided API key, or fall back to initialized key
-            current_api_key = api_key or self.__api_key
+            # Use provided API key, or fall back to class attribute
+            current_api_key = api_key or self.api_key
             
             # If still no API key available, inform the user
             if not current_api_key:
@@ -209,36 +226,6 @@ class AlphaVantageNewsTool(BaseTool):
                 "source": "Reuters",
                 "link": f"https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers={stock_symbol}",
                 "sentiment": "Neutral (Score: 0.12)"
-            },
-            {
-                "title": f"{company_name} CEO Discusses Future Growth Strategy in Industry Conference",
-                "source": "Barron's",
-                "link": f"https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers={stock_symbol}",
-                "sentiment": "Neutral (Score: 0.05)"
-            },
-            {
-                "title": f"{company_name} Expands Operations in Asian Markets, Targeting New Growth",
-                "source": "Nikkei Asia",
-                "link": f"https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers={stock_symbol}",
-                "sentiment": "Positive (Score: 0.32)"
-            },
-            {
-                "title": f"What's Next for {company_name}? Analysts Weigh In After Recent Developments",
-                "source": "MarketWatch",
-                "link": f"https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers={stock_symbol}",
-                "sentiment": "Neutral (Score: 0.09)"
-            },
-            {
-                "title": f"{company_name} to Invest $1B in AI and Machine Learning Technologies",
-                "source": "TechCrunch",
-                "link": f"https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers={stock_symbol}",
-                "sentiment": "Positive (Score: 0.71)"
-            },
-            {
-                "title": f"Quarterly Earnings Preview: What to Expect From {company_name}",
-                "source": "Investor's Business Daily",
-                "link": f"https://www.alphavantage.co/query?function=NEWS_SENTIMENT&tickers={stock_symbol}",
-                "sentiment": "Neutral (Score: -0.08)"
             }
         ]
         
