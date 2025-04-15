@@ -1,0 +1,13 @@
+{
+    "description": "Conduct a thorough research on AAPL. Your analysis should include:\n 1. Current stock price and historical performance (5 years).\n 2. Key financial metrics (P/E, EPS growth, revenue growth, margins).\n 3. Recent news and press releases (1 month).\n 4. Analyst ratings and price targets (min 3 analysts).\n 5. Reddit sentiment analysis (100 posts).\n 6. Major institutional holders and recent changes.\n 7. Competitive landscape and AAPL's market share.\n Use reputable financial websites for data.\n",
+    "name": "research_task",
+    "expected_output": "A detailed 200-word research report with data sources and brief analysis.\n",
+    "summary": "Conduct a thorough research on AAPL. Your analysis should include:\n...",
+    "raw": "```json\n{\n  \"researchreport\": \"Apple Inc. (AAPL) is a global technology leader. As of April 2024, AAPL's stock price hovers around $200, with a 5-year total return of approximately 190%. Key financial metrics include a P/E ratio around 28 and consistent revenue growth, although iPhone sales in China are facing headwinds from Huawei. Recent news highlights Apple's $500 billion US investment plan and potential iPhone 16 upgrades. Analyst ratings lean towards a 'Moderate Buy,' with an average price target of $242. Major institutional holders include Vanguard and BlackRock. Apple's competitive landscape includes Samsung, Google, and Microsoft, with AAPL holding a significant share of the premium smartphone market. Sources: Yahoo Finance, Alpha Vantage, TipRanks, MarketWatch, Investopedia.\"\n}\n```",
+    "pydantic": null,
+    "json_dict": {
+        "researchreport": "Apple Inc. (AAPL) is a global technology leader. As of April 2024, AAPL's stock price hovers around $200, with a 5-year total return of approximately 190%. Key financial metrics include a P/E ratio around 28 and consistent revenue growth, although iPhone sales in China are facing headwinds from Huawei. Recent news highlights Apple's $500 billion US investment plan and potential iPhone 16 upgrades. Analyst ratings lean towards a 'Moderate Buy,' with an average price target of $242. Major institutional holders include Vanguard and BlackRock. Apple's competitive landscape includes Samsung, Google, and Microsoft, with AAPL holding a significant share of the premium smartphone market. Sources: Yahoo Finance, Alpha Vantage, TipRanks, MarketWatch, Investopedia."
+    },
+    "agent": "Senior Stock Market Researcher\n",
+    "output_format": "json"
+}

@@ -1,0 +1,53 @@
+# Environment Files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+*.env
+
+# Virtual Environments
+venv/
+env/
+.venv/
+.env/
+ENV/
+tfmetal_env/
+# Python Specific
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# IDE and Editor Directories
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Secrets and Sensitive Configurations
+*.key
+*.pem
+*.cert
+secrets.json
+config.json
+
+# Logs and Databases
+*.log
+*.sqlite3
+*.db
+
+# Build and Compilation Outputs
+build/
+dist/
+*.egg-info/
+*.egg
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+
+# Dependency Directories
+node_modules/
+bower_components/

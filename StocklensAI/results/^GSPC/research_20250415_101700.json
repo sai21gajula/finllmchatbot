@@ -1,0 +1,13 @@
+{
+    "description": "Conduct a thorough research on ^GSPC. Your analysis should include:\n 1. Current stock price and historical performance (5 years).\n 2. Key financial metrics (P/E, EPS growth, revenue growth, margins).\n 3. Recent news and press releases (1 month).\n 4. Analyst ratings and price targets (min 3 analysts).\n 5. Reddit sentiment analysis (100 posts).\n 6. Major institutional holders and recent changes.\n 7. Competitive landscape and ^GSPC's market share.\n Use reputable financial websites for data.\n",
+    "name": "research_task",
+    "expected_output": "A detailed 200-word research report with data sources and brief analysis.\n",
+    "summary": "Conduct a thorough research on ^GSPC. Your analysis should include:\n...",
+    "raw": "\n```json\n{\n  \"researchreport\": \"The S&P 500 (^GSPC) currently trades around $5,405.97 (Yahoo Finance). Over the past 5 years, the average stock market return was 13.6% (SoFi). The index's P/E ratio is approximately 26.94 (Multpl), with an EPS growth of 20.72% year-over-year (YCharts) and revenue growth of 5.89% (Multpl). The net profit margin for S&P 500 companies stands at 12.1% for Q4 2024 (FactSet). Recent news can be found on Yahoo Finance, The Motley Fool and Nasdaq. Analyst ratings and price targets, Reddit sentiment analysis, major institutional holders and recent changes, and competitive landscape and ^GSPC's market share data are not available through the tools provided.\"\n}\n```",
+    "pydantic": null,
+    "json_dict": {
+        "researchreport": "The S&P 500 (^GSPC) currently trades around $5,405.97 (Yahoo Finance). Over the past 5 years, the average stock market return was 13.6% (SoFi). The index's P/E ratio is approximately 26.94 (Multpl), with an EPS growth of 20.72% year-over-year (YCharts) and revenue growth of 5.89% (Multpl). The net profit margin for S&P 500 companies stands at 12.1% for Q4 2024 (FactSet). Recent news can be found on Yahoo Finance, The Motley Fool and Nasdaq. Analyst ratings and price targets, Reddit sentiment analysis, major institutional holders and recent changes, and competitive landscape and ^GSPC's market share data are not available through the tools provided."
+    },
+    "agent": "Senior Stock Market Researcher\n",
+    "output_format": "json"
+}

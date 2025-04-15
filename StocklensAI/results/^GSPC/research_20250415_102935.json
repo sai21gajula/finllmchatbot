@@ -1,0 +1,13 @@
+{
+    "description": "Conduct a thorough research on ^GSPC. Your analysis should include:\n 1. Current stock price and historical performance (5 years).\n 2. Key financial metrics (P/E, EPS growth, revenue growth, margins).\n 3. Recent news and press releases (1 month).\n 4. Analyst ratings and price targets (min 3 analysts).\n 5. Reddit sentiment analysis (100 posts).\n 6. Major institutional holders and recent changes.\n 7. Competitive landscape and ^GSPC's market share.\n Use reputable financial websites for data.\n",
+    "name": "research_task",
+    "expected_output": "A detailed 200-word research report with data sources and brief analysis.\n",
+    "summary": "Conduct a thorough research on ^GSPC. Your analysis should include:\n...",
+    "raw": "{\n  \"researchreport\": \"The S&P 500 (^GSPC) is currently trading around 5,405.97 (Yahoo Finance). The average stock market return for the last 5 years was approximately 13.6% to 16.5%. The S&P 500 P/E ratio is currently at 27.99 (YCharts). For CY 2026, analysts are projecting earnings growth of 14.2% and revenue growth of 6.5% (FactSet). Analyst ratings and price targets are difficult to find directly for the index itself. However, Goldman Sachs (GS), a component of the S&P 500, has an average 12-month price target of $634.13 (TipRanks). S&P Global (SPGI) has a consensus price target of $511.96 (Benzinga). StockInvest.us predicts a -12.86% fall in the next 3 months. Data from Yahoo Finance, Motley Fool, YCharts, FactSet, TipRanks, and Benzinga.\"\n}",
+    "pydantic": null,
+    "json_dict": {
+        "researchreport": "The S&P 500 (^GSPC) is currently trading around 5,405.97 (Yahoo Finance). The average stock market return for the last 5 years was approximately 13.6% to 16.5%. The S&P 500 P/E ratio is currently at 27.99 (YCharts). For CY 2026, analysts are projecting earnings growth of 14.2% and revenue growth of 6.5% (FactSet). Analyst ratings and price targets are difficult to find directly for the index itself. However, Goldman Sachs (GS), a component of the S&P 500, has an average 12-month price target of $634.13 (TipRanks). S&P Global (SPGI) has a consensus price target of $511.96 (Benzinga). StockInvest.us predicts a -12.86% fall in the next 3 months. Data from Yahoo Finance, Motley Fool, YCharts, FactSet, TipRanks, and Benzinga."
+    },
+    "agent": "Senior Stock Market Researcher\n",
+    "output_format": "json"
+}

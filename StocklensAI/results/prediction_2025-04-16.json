@@ -1,0 +1,59 @@
+{
+    "current_date": "2025-04-15",
+    "prediction_date": "2025-04-16",
+    "current_price": 5422.0,
+    "predicted_price": 5394.89,
+    "price_change": -27.109999999999673,
+    "price_change_pct": -0.49999999999999395,
+    "direction": "DOWN",
+    "confidence": 60.0,
+    "visualization": "results/SP500_prediction_2025-04-16.png",
+    "technical_indicators": {
+        "rsi": {
+            "value": 46.407257903138884,
+            "period": 14,
+            "status": "NEUTRAL"
+        },
+        "macd": {
+            "value": -118.8497525950188,
+            "signal": -127.31470075738866,
+            "histogram": 8.464948162369865,
+            "status": "BULLISH"
+        },
+        "sma": {
+            "short_period": 50,
+            "short_value": 5736.80259765625,
+            "long_period": 200,
+            "long_value": 5753.59134765625,
+            "status": "BEARISH"
+        },
+        "bollinger": {
+            "upper": 5967.858554618012,
+            "middle": 5494.210009765625,
+            "lower": 5020.561464913238,
+            "width": 0.17471359087140803,
+            "period": 20,
+            "status": "NEUTRAL"
+        },
+        "stochastic": {
+            "k": 65.41840834547361,
+            "d": 60.369099786076056,
+            "status": "NEUTRAL"
+        },
+        "atr": {
+            "value": 178.760917561786,
+            "period": 14
+        },
+        "momentum": {
+            "1d": 0.00296520042086712,
+            "5d": 0.08814975982176088,
+            "10d": -0.037469768848111706,
+            "20d": -0.0343137698255056
+        },
+        "volume": {
+            "change": -0.8981986763232792,
+            "ratio": 0.09376641685846027,
+            "status": "LOW"
+        }
+    }
+}

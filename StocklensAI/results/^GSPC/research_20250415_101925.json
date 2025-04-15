@@ -1,0 +1,13 @@
+{
+    "description": "Conduct a thorough research on ^GSPC. Your analysis should include:\n 1. Current stock price and historical performance (5 years).\n 2. Key financial metrics (P/E, EPS growth, revenue growth, margins).\n 3. Recent news and press releases (1 month).\n 4. Analyst ratings and price targets (min 3 analysts).\n 5. Reddit sentiment analysis (100 posts).\n 6. Major institutional holders and recent changes.\n 7. Competitive landscape and ^GSPC's market share.\n Use reputable financial websites for data.\n",
+    "name": "research_task",
+    "expected_output": "A detailed 200-word research report with data sources and brief analysis.\n",
+    "summary": "Conduct a thorough research on ^GSPC. Your analysis should include:\n...",
+    "raw": "{\n  \"researchreport\": \"The S&P 500 (^GSPC) is currently trading around $5,442.43 (The Motley Fool). Its average return for the last 5 years is 16.5% (UpMyInterest.com). The index's P/E ratio is approximately 27.99 (YCharts). Earnings are projected to grow by 10.6% and revenue by 5.3% in CY 2025 (FactSet). The blended pro-forma net margin for 4Q24 is estimated at 13.5% (DWS Group). Recent news suggests market volatility, including a 'death cross' pattern (Reuters). Further research is needed to determine analyst ratings, Reddit sentiment, institutional holders, and competitive landscape.\"\n}",
+    "pydantic": null,
+    "json_dict": {
+        "researchreport": "The S&P 500 (^GSPC) is currently trading around $5,442.43 (The Motley Fool). Its average return for the last 5 years is 16.5% (UpMyInterest.com). The index's P/E ratio is approximately 27.99 (YCharts). Earnings are projected to grow by 10.6% and revenue by 5.3% in CY 2025 (FactSet). The blended pro-forma net margin for 4Q24 is estimated at 13.5% (DWS Group). Recent news suggests market volatility, including a 'death cross' pattern (Reuters). Further research is needed to determine analyst ratings, Reddit sentiment, institutional holders, and competitive landscape."
+    },
+    "agent": "Senior Stock Market Researcher\n",
+    "output_format": "json"
+}

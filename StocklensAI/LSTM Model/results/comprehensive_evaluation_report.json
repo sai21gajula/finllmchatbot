@@ -1,0 +1,64 @@
+{
+    "direction_model": {
+        "accuracy": 0.46240276577355227,
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1_score": 0.0,
+        "confusion_matrix": [
+            [
+                535,
+                0
+            ],
+            [
+                622,
+                0
+            ]
+        ]
+    },
+    "price_model": {
+        "mae": 1625.291015625,
+        "mse": 3140370.75,
+        "rmse": 1772.109130859375,
+        "mape": 35.58495342731476,
+        "directional_accuracy": 0.5164359861591695
+    },
+    "architecture": {
+        "direction_model": {
+            "n_layers": 3,
+            "layer1_type": "GRU",
+            "layer1_units": 192,
+            "dropout1": 0.25,
+            "layer2_type": "LSTM",
+            "layer2_units": 143,
+            "use_attention": true,
+            "dropout2": 0.35,
+            "layer3_type": "BiGRU",
+            "layer3_units": 34,
+            "dropout3": 0.2,
+            "attention_units": 43,
+            "dense_units": 47,
+            "dense_dropout": 0.2,
+            "learning_rate": 0.0001872781620722466,
+            "optimizer": "adam",
+            "batch_size": 128
+        },
+        "price_model": {
+            "n_layers": 2,
+            "layer1_type": "GRU",
+            "layer1_units": 465,
+            "dropout1": 0.35,
+            "layer2_type": "LSTM",
+            "layer2_units": 180,
+            "use_attention": false,
+            "dropout2": 0.35,
+            "dense_units1": 223,
+            "dense_dropout1": 0.2,
+            "dense_units2": 103,
+            "dense_dropout2": 0.15,
+            "learning_rate": 0.002348795554214226,
+            "loss_type": "mae",
+            "optimizer": "rmsprop",
+            "batch_size": 64
+        }
+    }
+}

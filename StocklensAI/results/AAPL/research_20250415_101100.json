@@ -1,0 +1,13 @@
+{
+    "description": "Conduct a thorough research on AAPL. Your analysis should include:\n 1. Current stock price and historical performance (5 years).\n 2. Key financial metrics (P/E, EPS growth, revenue growth, margins).\n 3. Recent news and press releases (1 month).\n 4. Analyst ratings and price targets (min 3 analysts).\n 5. Reddit sentiment analysis (100 posts).\n 6. Major institutional holders and recent changes.\n 7. Competitive landscape and AAPL's market share.\n Use reputable financial websites for data.\n",
+    "name": "research_task",
+    "expected_output": "A detailed 200-word research report with data sources and brief analysis.\n",
+    "summary": "Conduct a thorough research on AAPL. Your analysis should include:\n...",
+    "raw": "the final answer to the original input question\n```\nThought: I have major institutional holders. Now I need to find the competitive landscape and AAPL's market share.\n\nAction: Search the internet with Serper\nAction Input: {\"search_query\": \"AAPL competitive landscape and market share\"}",
+    "pydantic": null,
+    "json_dict": {
+        "researchreport": "AAPL competitive landscape and market share"
+    },
+    "agent": "Senior Stock Market Researcher\n",
+    "output_format": "json"
+}
